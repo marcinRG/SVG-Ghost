@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Kameron:400,700|Lato:400,700|Raleway:400,400i,700"
+          rel="stylesheet">
+    <title>SVG-Ghost demo</title>
+    <!-- build:css css/style.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body>
+<main>
+  <section class="main-section">
+      <svg class="defs" width="0" height="0">
+          <defs>
+              <g id="ghost-eye-8b" class="ghost-eye-8b">
+                  <polygon class="ghost-eye" points="40,0 120,0 120,40 160,40 160,160 120,160 120,200 40,200 40,160 0,160 0,40 40,40" />
+                  <rect class="ghost-eyeball" x="0" y="80" width="80" height="80"></rect>
+              </g>
+          </defs>
+      </svg>
+      <svg class="ghost-8bit" height="700" width="590">
+          <path class="ghost-shape-8b" d="M10,700 L10,380 L50,380 L50,260 L90,260 L90,220 L130,220 L130,180 L210,180 L210,140 L370,140 L370,180 L450,180
+           L450,220 L500,220 L500,260 L540,260 L540,380 L580,380 L580,700 L540,700 L540,660 L500,660 L500,620 L460,620 L460,660 L420,660 L420,700 L335,700 L335,620 L255,620 L255,700
+           L180,700 L180,660 L140,660 L140,620 L100,620 L100,660 L60,660  L60,700 Z" />
+          <use class="left-eye" xlink:href="#ghost-eye-8b" x="50" y="260"></use>
+          <use class="right-eye" xlink:href="#ghost-eye-8b" x="300" y="260"></use>
+      </svg>
+      <svg class="ghost-hd" height="700" width="590">
+      </svg>
+  </section>
+</main>
+<footer class="footer">
+    <span></span>
+</footer>
+<!-- build:js js/app.js -->
+<!-- inject:js -->
+<!-- endinject -->
+<!-- endbuild -->
+</body>
+</html>

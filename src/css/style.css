@@ -1,0 +1,48 @@
+*,
+html,
+body {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1920px; }
+
+.section {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.defs {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: none; }
+
+.ghost-eye-8b .ghost-eye {
+  fill: white; }
+
+.ghost-eye-8b .ghost-eyeball {
+  fill: blue; }
+
+.ghost-8bit {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: black; }
+  .ghost-8bit .ghost-shape-8b {
+    fill: red; }
+
+.ghost-hd {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: bisque; }

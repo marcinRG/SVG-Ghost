@@ -1,0 +1,30 @@
+@import '../mixins';
+
+.defs {
+  @include set-to-zero;
+  display: none;
+}
+
+.ghost-eye-8b {
+   .ghost-eye {
+     fill: white;
+   }
+
+  .ghost-eyeball {
+    fill: blue;
+  }
+}
+
+.ghost-8bit {
+  @include set-to-zero;
+  background-color: black;
+
+  .ghost-shape-8b {
+    fill: red;
+  }
+}
+
+.ghost-hd {
+  @include set-to-zero;
+  background-color: bisque;
+}
