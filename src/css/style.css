@@ -27,6 +27,22 @@ main {
   padding: 0;
   display: none; }
 
+.eyelash {
+  fill: black;
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5); }
+
+.test {
+  fill: white;
+  stroke: none;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+          transform: rotate(20deg); }
+
 .ghost-eye-8b .ghost-eye {
   fill: white; }
 

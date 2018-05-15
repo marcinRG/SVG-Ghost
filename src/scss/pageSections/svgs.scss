@@ -5,10 +5,22 @@
   display: none;
 }
 
+.eyelash {
+  fill: black;
+  transform: scale(.5);
+}
+
+.test {
+  fill: white;
+  stroke: none;
+  transform-origin: center center;
+  transform: rotate(20deg);
+}
+
 .ghost-eye-8b {
-   .ghost-eye {
-     fill: white;
-   }
+  .ghost-eye {
+    fill: white;
+  }
 
   .ghost-eyeball {
     fill: blue;
@@ -21,6 +33,8 @@
 
   .ghost-shape-8b {
     fill: red;
+    //stroke: magenta;
+    //stroke-width: 5px;
   }
 }
 
