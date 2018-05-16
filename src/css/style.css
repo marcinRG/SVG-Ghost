@@ -28,37 +28,52 @@ main {
   display: none; }
 
 .eyelash {
-  fill: black;
-  -webkit-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-          transform: scale(0.5); }
+  fill: black; }
 
-.test {
-  fill: white;
-  stroke: none;
-  -webkit-transform-origin: center center;
-      -ms-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transform: rotate(20deg);
-      -ms-transform: rotate(20deg);
-          transform: rotate(20deg); }
+.eyelash-1 {
+  x: 20px;
+  y: 40px;
+  -webkit-transform-origin: 20px 20px;
+      -ms-transform-origin: 20px 20px;
+          transform-origin: 20px 20px;
+  -webkit-transform: scale(0.3) rotate(-35deg);
+      -ms-transform: scale(0.3) rotate(-35deg);
+          transform: scale(0.3) rotate(-35deg); }
 
-.ghost-eye-8b .ghost-eye {
+.eyelash-2 {
+  x: 20px;
+  y: 5px;
+  -webkit-transform-origin: 20px 5px;
+      -ms-transform-origin: 20px 5px;
+          transform-origin: 20px 5px;
+  -webkit-transform: scale(0.4) rotate(-35deg);
+      -ms-transform: scale(0.4) rotate(-35deg);
+          transform: scale(0.4) rotate(-35deg); }
+
+.eyelash-3 {
+  x: 20px;
+  y: 45px;
+  -webkit-transform-origin: 20px 45px;
+      -ms-transform-origin: 20px 45px;
+          transform-origin: 20px 45px;
+  -webkit-transform: scale(0.2) rotate(-45deg);
+      -ms-transform: scale(0.2) rotate(-45deg);
+          transform: scale(0.2) rotate(-45deg); }
+
+.big-flash,
+.small-flash {
   fill: white; }
 
-.ghost-eye-8b .ghost-eyeball {
+.iris {
   fill: blue; }
 
-.ghost-8bit {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  background-color: black; }
-  .ghost-8bit .ghost-shape-8b {
-    fill: red; }
+.big-flash {
+  -webkit-transform-origin: 20px 20px;
+      -ms-transform-origin: 20px 20px;
+          transform-origin: 20px 20px;
+  -webkit-transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+          transform: rotate(15deg); }
 
-.ghost-hd {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  background-color: bisque; }
+.eye-hole {
+  fill: black; }

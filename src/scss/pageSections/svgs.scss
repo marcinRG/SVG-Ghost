@@ -7,38 +7,67 @@
 
 .eyelash {
   fill: black;
-  transform: scale(.5);
 }
 
-.test {
+.eyelash-1 {
+  x: 20px;
+  y: 40px;
+  transform-origin:20px 20px;
+  transform: scale(.3) rotate(-35deg);
+}
+
+.eyelash-2 {
+  x: 20px;
+  y: 5px;
+  transform-origin:20px 5px;
+  transform: scale(.4) rotate(-35deg);
+}
+
+.eyelash-3 {
+  x: 20px;
+  y: 45px;
+  transform-origin:20px 45px;
+  transform: scale(.2) rotate(-45deg);
+}
+
+.big-flash,
+.small-flash {
   fill: white;
-  stroke: none;
-  transform-origin: center center;
-  transform: rotate(20deg);
 }
 
-.ghost-eye-8b {
-  .ghost-eye {
-    fill: white;
-  }
-
-  .ghost-eyeball {
-    fill: blue;
-  }
+.iris {
+  fill: blue;
 }
 
-.ghost-8bit {
-  @include set-to-zero;
-  background-color: black;
-
-  .ghost-shape-8b {
-    fill: red;
-    //stroke: magenta;
-    //stroke-width: 5px;
-  }
+.big-flash {
+  transform-origin: 20px 20px;
+  transform: rotate(15deg);
 }
 
-.ghost-hd {
-  @include set-to-zero;
-  background-color: bisque;
+.eye-hole {
+  fill: black;
 }
+
+//.ghost-shape-8b {
+//  fill: red;
+//}
+//
+//.ghost-eye-8b {
+//  .ghost-eye {
+//    fill: white;
+//  }
+//
+//  .ghost-eyeball {
+//    fill: blue;
+//  }
+//}
+//
+//.ghost-8bit {
+//  @include set-to-zero;
+//  background-color: black;
+//}
+//
+//.ghost-hd {
+//  @include set-to-zero;
+//  background-color: bisque;
+//}
