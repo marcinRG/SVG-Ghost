@@ -22,9 +22,9 @@
            L450,220 L500,220 L500,260 L540,260 L540,380 L580,380 L580,700 L540,700 L540,660 L500,660 L500,620 L460,620 L460,660 L420,660 L420,700 L335,700 L335,620 L255,620 L255,700
            L180,700 L180,660 L140,660 L140,620 L100,620 L100,660 L60,660  L60,700 Z" />
               </g>
-              <g id="ghost-eye-8b" class="ghost-eye-8b">
-                  <polygon class="ghost-eye" points="40,0 120,0 120,40 160,40 160,160 120,160 120,200 40,200 40,160 0,160 0,40 40,40" />
-                  <rect class="ghost-eyeball" x="0" y="80" width="80" height="80"></rect>
+              <g id="ghost-eye-8b">
+                  <polygon class="ghost-eye-8b" points="40,0 120,0 120,40 160,40 160,160 120,160 120,200 40,200 40,160 0,160 0,40 40,40" />
+                  <rect class="ghost-eyeball-8b" x="0" y="80" width="80" height="80"></rect>
               </g>
               <g id="ghost-eyelash-hd" height="110" width="35">
                   <path class="eyelash" d="M 5,110 q10,-60 0,-100 q5,-10 20,100 Z"></path>
@@ -35,7 +35,7 @@
                   <ellipse  class="big-flash" fill="white" rx="4" ry="8" cx="20" cy="20"></ellipse>
                   <ellipse  class="small-flash" fill="white" rx="2" ry="2" cx="24" cy="28"></ellipse>
               </g>
-              <g id="ghost-eye-hd" class="ghost-eye-hd" height="250" width="150">
+              <g id="ghost-eye-hd" height="250" width="150">
                   <use  class="eyelash-1" xlink:href="#ghost-eyelash-hd"></use>
                   <use  class="eyelash-2" xlink:href="#ghost-eyelash-hd"></use>
                   <use  class="eyelash-3" xlink:href="#ghost-eyelash-hd"></use>
@@ -44,8 +44,8 @@
                   <use xlink:href="#ghost-eyeball-hd" y="85" x="55"></use>
               </g>
 
-              <g class="ghost-8bit" height="700" width="590">
-                  <path class="ghost-shape-8b" d="M 95,700 q-50,-125 0,-350 c20,-65 25,-100 0,-150 c-110,-250 510,-250 400 0 c-25,50 -20,85 0,150 q50,225 0,350
+              <g id="ghost-shape-hd" height="700" width="590">
+                  <path class="ghost-shape-hd" d="M 95,700 q-50,-125 0,-350 c20,-65 25,-100 0,-150 c-110,-250 510,-250 400 0 c-25,50 -20,85 0,150 q50,225 0,350
           c-50,-50 -50,-50 -100,0 c-100,-150 -100,-150 -200,0 c-50,-70 -50,-70 -100,0 Z"></path>
               </g>
 
@@ -55,18 +55,20 @@
           <use xlink:href="#ghost-shape-8b" x="0" y="0"></use>
           <use class="left-eye" xlink:href="#ghost-eye-8b" x="50" y="260"></use>
           <use class="right-eye" xlink:href="#ghost-eye-8b" x="300" y="260"></use>
-      </svg>-->
-      <!--<svg class="ghost-8bit" height="700" width="590">-->
-          <!--<path class="ghost-shape-8b" d="M10,700 L10,380 L50,380 L50,260 L90,260 L90,220 L130,220 L130,180 L210,180 L210,140 L370,140 L370,180 L450,180-->
-           <!--L450,220 L500,220 L500,260 L540,260 L540,380 L580,380 L580,700 L540,700 L540,660 L500,660 L500,620 L460,620 L460,660 L420,660 L420,700 L335,700 L335,620 L255,620 L255,700-->
-           <!--L180,700 L180,660 L140,660 L140,620 L100,620 L100,660 L60,660  L60,700 Z" />-->
-          <!--<use class="left-eye" xlink:href="#ghost-eye-8b" x="50" y="260"></use>-->
-          <!--<use class="right-eye" xlink:href="#ghost-eye-8b" x="300" y="260"></use>-->
-      <!--</svg>-->
-      <svg class="ghost-8bit" height="700" width="590">
-          <path class="ghost-shape-8b" d="M 95,700 q-50,-125 0,-350 c20,-65 25,-100 0,-150 c-110,-250 510,-250 400 0 c-25,50 -20,85 0,150 q50,225 0,350
-          c-50,-50 -50,-50 -100,0 c-100,-150 -100,-150 -200,0 c-50,-70 -50,-70 -100,0 Z"></path>
       </svg>
+
+      <svg class="ghost-hd" height="700" width="590">
+          <use xlink:href="#ghost-shape-hd" x="0" y="0"></use>
+          <use xlink:href="#ghost-eye-hd" x="150" y="150"></use>
+          <use xlink:href="#ghost-eye-hd" x="300" y="150"></use>
+      </svg>-->
+
+
+      <svg class="title" height="300" width="800">
+          <text class="title-text" x="50" y="50">SVG Ghost demo</text>
+      </svg>
+<!--      <svg class="options" height="250" width="150">
+      </svg>-->
 
   </section>
 </main>
@@ -75,6 +77,7 @@
 </footer>
 <!-- build:js js/app.js -->
 <!-- inject:js -->
+<script src="bundle.js"></script>
 <!-- endinject -->
 <!-- endbuild -->
 </body>

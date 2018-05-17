@@ -6,7 +6,7 @@ var source = require('vinyl-source-stream');
 var $ = require('gulp-load-plugins')({lazy: true});
 var sassLint = require('gulp-sass-lint');
 var del = require('del');
-var sassImportOnce = require('gulp-sass-import-once');
+//var sassImportOnce = require('gulp-sass-import-once');
 var settings = require('./gulp.settings/settings');
 
 //code check

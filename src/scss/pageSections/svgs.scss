@@ -1,4 +1,5 @@
 @import '../mixins';
+@import '../common';
 
 .defs {
   @include set-to-zero;
@@ -10,24 +11,18 @@
 }
 
 .eyelash-1 {
-  x: 20px;
-  y: 40px;
-  transform-origin:20px 20px;
-  transform: scale(.3) rotate(-35deg);
+  transform-origin: 0 0;
+  transform: scale(.3) rotate(-32deg) translateX(45px) translateY(100px);
 }
 
 .eyelash-2 {
-  x: 20px;
-  y: 5px;
-  transform-origin:20px 5px;
-  transform: scale(.4) rotate(-35deg);
+  transform-origin: 0 0;
+  transform: scale(.4) rotate(-35deg) translateX(5px) translateY(60px);
 }
 
 .eyelash-3 {
-  x: 20px;
-  y: 45px;
-  transform-origin:20px 45px;
-  transform: scale(.2) rotate(-45deg);
+  transform-origin: 0 0;
+  transform: scale(.2) rotate(-27deg) translateX(130px) translateY(180px);
 }
 
 .big-flash,
@@ -48,26 +43,38 @@
   fill: black;
 }
 
-//.ghost-shape-8b {
-//  fill: red;
-//}
-//
-//.ghost-eye-8b {
-//  .ghost-eye {
-//    fill: white;
-//  }
-//
-//  .ghost-eyeball {
-//    fill: blue;
-//  }
-//}
-//
-//.ghost-8bit {
-//  @include set-to-zero;
-//  background-color: black;
-//}
-//
-//.ghost-hd {
-//  @include set-to-zero;
-//  background-color: bisque;
-//}
+.ghost-shape-hd {
+  fill: green;
+}
+
+.ghost-shape-8b {
+  fill: red;
+}
+
+.ghost-eye-8b {
+  fill: white;
+}
+
+.ghost-eyeball-8b {
+  fill: blue;
+}
+
+.ghost-8bit {
+  @include set-to-zero;
+  background-color: black;
+}
+
+.ghost-hd {
+  @include set-to-zero;
+  background-color: black;
+}
+
+.title {
+  background-color: beige;
+}
+
+.title-text {
+  @include font-8-bit-wonder;
+  fill: magenta;
+  font-size: 40px;
+}
