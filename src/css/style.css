@@ -92,7 +92,7 @@ body {
   fill: black; }
 
 .ghost-shape-hd {
-  fill: green; }
+  fill: #ffbb15; }
 
 .ghost-shape-8b {
   fill: red; }
@@ -103,25 +103,174 @@ body {
 .ghost-eyeball-8b {
   fill: blue; }
 
+.title {
+  background-color: transparent; }
+
+.title-text {
+  font-family: '8BitWonder', monospace;
+  fill: yellow;
+  stroke: black;
+  stroke-width: 2;
+  font-size: 40px;
+  margin: 0 auto; }
+
+.title-background {
+  fill: orange;
+  stroke: black;
+  stroke-width: 3; }
+
+@font-face {
+  font-family: "8BitWonder";
+  src: url("../fonts/8bitwonder/8-bit_wonder.eot");
+  src: url("../fonts/8bitwonder/8-bit_wonder.eot?#iefix") format("embedded-opentype"), url("../fonts/8bitwonder/8-bit_wonder.woff2") format("woff2"), url("../fonts/8bitwonder/8-bit_wonder.woff") format("woff"), url("../fonts/8bitwonder/8-bit_wonder.ttf") format("truetype"), url("../fonts/8bitwonder/8-bit_wonder.svg#icon") format("svg"); }
+
+@font-face {
+  font-family: "PressStart";
+  src: url("../fonts/pressstart/pressstart2p.eot");
+  src: url("../fonts/pressstart/pressstart2p.eot?#iefix") format("embedded-opentype"), url("../fonts/pressstart/pressstart2p.woff2") format("woff2"), url("../fonts/pressstart/pressstart2p.woff") format("woff"), url("../fonts/pressstart/pressstart2p.ttf") format("truetype"), url("../fonts/pressstart/pressstart2p.svg#icon") format("svg"); }
+
+*,
+html,
+body {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+.section {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.title-section {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background-color: #00410e;
+  padding: 4em; }
+  .title-section .res-title {
+    font-family: 'PressStart', monospace;
+    color: yellow;
+    font-size: 25px;
+    letter-spacing: 3px;
+    margin: 3em 0 2em; }
+  .title-section .selections {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    list-style-type: none; }
+  .title-section .selection {
+    font-family: 'PressStart', monospace;
+    color: yellow;
+    font-size: 25px;
+    letter-spacing: 3px;
+    padding: .7em .5em;
+    margin: 1em 0;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    border: 5px transparent solid;
+    border-radius: 10px; }
+    .title-section .selection::before {
+      display: inline-block;
+      padding: 0 .4em 0 .2em;
+      content: '\00a0'; }
+    .title-section .selection:hover {
+      border: 5px yellow solid; }
+      .title-section .selection:hover::before {
+        content: '*'; }
+
+@font-face {
+  font-family: "8BitWonder";
+  src: url("../fonts/8bitwonder/8-bit_wonder.eot");
+  src: url("../fonts/8bitwonder/8-bit_wonder.eot?#iefix") format("embedded-opentype"), url("../fonts/8bitwonder/8-bit_wonder.woff2") format("woff2"), url("../fonts/8bitwonder/8-bit_wonder.woff") format("woff"), url("../fonts/8bitwonder/8-bit_wonder.ttf") format("truetype"), url("../fonts/8bitwonder/8-bit_wonder.svg#icon") format("svg"); }
+
+@font-face {
+  font-family: "PressStart";
+  src: url("../fonts/pressstart/pressstart2p.eot");
+  src: url("../fonts/pressstart/pressstart2p.eot?#iefix") format("embedded-opentype"), url("../fonts/pressstart/pressstart2p.woff2") format("woff2"), url("../fonts/pressstart/pressstart2p.woff") format("woff"), url("../fonts/pressstart/pressstart2p.ttf") format("truetype"), url("../fonts/pressstart/pressstart2p.svg#icon") format("svg"); }
+
+*,
+html,
+body {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+.section {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.ghost-section {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden; }
+  .ghost-section .ghost-field {
+    width: 100%;
+    height: 85%;
+    display: block;
+    background-color: darkblue;
+    position: relative; }
+  .ghost-section .button-field {
+    width: 100%;
+    height: 15%;
+    display: block;
+    background-color: #00410e;
+    position: relative; }
+
+.btn-back {
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: 'PressStart', monospace;
+  color: yellow;
+  font-size: 25px;
+  letter-spacing: 3px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 5px transparent solid;
+  border-radius: 10px;
+  padding: .7em .5em;
+  margin: 0; }
+  .btn-back::before {
+    padding: 0 .5em;
+    display: inline-block;
+    content: '<--'; }
+  .btn-back:hover {
+    border: 5px yellow solid; }
+    .btn-back:hover::before {
+      content: '<--'; }
+
 .ghost-8bit {
   border: 0;
   margin: 0;
   padding: 0;
-  background-color: black; }
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: transparent; }
 
 .ghost-hd {
   border: 0;
   margin: 0;
   padding: 0;
-  background-color: black; }
-
-.title {
-  background-color: black; }
-
-.title-text {
-  font-family: '8BitWonder', monospace;
-  letter-spacing: 3px;
-  fill: yellow;
-  stroke: black;
-  stroke-width: 2px;
-  font-size: 40px; }
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }

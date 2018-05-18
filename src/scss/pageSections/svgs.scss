@@ -44,7 +44,7 @@
 }
 
 .ghost-shape-hd {
-  fill: green;
+  fill: #ffbb15;
 }
 
 .ghost-shape-8b {
@@ -59,25 +59,21 @@
   fill: blue;
 }
 
-.ghost-8bit {
-  @include set-to-zero;
-  background-color: black;
-}
-
-.ghost-hd {
-  @include set-to-zero;
-  background-color: black;
-}
-
 .title {
-  background-color: black;
+  background-color: transparent;
 }
 
 .title-text {
   @include font-8-bit-wonder;
-  letter-spacing: 3px;
   fill: yellow;
   stroke: black;
-  stroke-width: 2px;
+  stroke-width: 2;
   font-size: 40px;
+  margin: 0 auto;
+}
+
+.title-background {
+  fill: orange;
+  stroke: black;
+  stroke-width: 3;
 }

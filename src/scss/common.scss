@@ -22,3 +22,10 @@ body {
 .section {
   box-sizing: border-box;
 }
+
+@mixin txt {
+  @include font-press-start;
+  color: yellow;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
