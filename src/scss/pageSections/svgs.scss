@@ -70,11 +70,14 @@
 }
 
 .title {
-  background-color: beige;
+  background-color: black;
 }
 
 .title-text {
   @include font-8-bit-wonder;
-  fill: magenta;
+  letter-spacing: 3px;
+  fill: yellow;
+  stroke: black;
+  stroke-width: 2px;
   font-size: 40px;
 }
