@@ -50,25 +50,16 @@ body {
   fill: black; }
 
 .eyelash-1 {
-  -webkit-transform-origin: 0 0;
-      -ms-transform-origin: 0 0;
-          transform-origin: 0 0;
   -webkit-transform: scale(0.3) rotate(-32deg) translateX(45px) translateY(100px);
       -ms-transform: scale(0.3) rotate(-32deg) translateX(45px) translateY(100px);
           transform: scale(0.3) rotate(-32deg) translateX(45px) translateY(100px); }
 
 .eyelash-2 {
-  -webkit-transform-origin: 0 0;
-      -ms-transform-origin: 0 0;
-          transform-origin: 0 0;
   -webkit-transform: scale(0.4) rotate(-35deg) translateX(5px) translateY(60px);
       -ms-transform: scale(0.4) rotate(-35deg) translateX(5px) translateY(60px);
           transform: scale(0.4) rotate(-35deg) translateX(5px) translateY(60px); }
 
 .eyelash-3 {
-  -webkit-transform-origin: 0 0;
-      -ms-transform-origin: 0 0;
-          transform-origin: 0 0;
   -webkit-transform: scale(0.2) rotate(-27deg) translateX(130px) translateY(180px);
       -ms-transform: scale(0.2) rotate(-27deg) translateX(130px) translateY(180px);
           transform: scale(0.2) rotate(-27deg) translateX(130px) translateY(180px); }
