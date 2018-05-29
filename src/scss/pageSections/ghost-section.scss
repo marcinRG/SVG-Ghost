@@ -25,9 +25,10 @@
   }
 }
 
-.btn-back {
+.back-btn {
   @include position-center;
   @include txt;
+  outline: 0;
   background-color: transparent;
   cursor: pointer;
   border: 5px transparent solid;
