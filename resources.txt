@@ -1,2 +1,18 @@
 https://www.smashingmagazine.com/2015/05/why-the-svg-filter-is-awesome/
 https://www.w3.org/TR/SVG/filters.html#Introduction
+
+
+8bit
+x	minX	maxX
+left	50	130
+right	300	380
+
+y	minY	maxY
+left	220	320
+right	220	320
+
+eyeball
+x	minX	maxX
+	0	80
+y	minY	maxY
+	40	80

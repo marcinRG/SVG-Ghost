@@ -48,10 +48,10 @@ function copyFunction(propertyName, origin, copy) {
 ObservableWrapper.prototype.observeAllProperties = function (origin, wrapper, observerList) {
     for (var name in origin) {
         if (origin.hasOwnProperty(name)) {
-            if (!isFunction(origin[name])) {
-                addPropertyGetterSetter(name, origin, wrapper, observerList);
-            } else {
+            if (isFunction(origin[name])) {
                 copyFunction(name, origin, wrapper);
+            } else {
+                addPropertyGetterSetter(name, origin, wrapper, observerList);
             }
         }
     }

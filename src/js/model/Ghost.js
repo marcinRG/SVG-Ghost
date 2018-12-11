@@ -2,6 +2,7 @@
 
 function Ghost(settings) {
     var isVisble = false;
+    var parentElement = settings.parentElement;
     var ghostBody = settings.body;
     var leftEye = settings.leftEye;
     var rightEye = settings.rightEye;
@@ -43,6 +44,19 @@ function Ghost(settings) {
 
     function init() {
         hide();
+        getElementRect();
+        window.addEventListener('resize', function () {
+            getElementRect();
+        });
+    }
+
+    function getElementRect() {
+        var rect = parentElement.getBoundingClientRect();
+        console.log('left:' + rect.left);
+        console.log('width:' + rect.width);
+        console.log('height:' + rect.height);
+        console.log(rect.bottom);
+        console.log(rect.right);
     }
 
     return {
@@ -60,3 +74,7 @@ function isMousePositionChange(value) {
 }
 
 module.exports = Ghost;
+
+// const rect = this.htmlFieldElement.getBoundingClientRect();
+// this.minWidth = Math.floor(rect.left + (this.pointerWidth / 2));
+// this.maxWidth = Math.ceil(rect.left + rect.width - (this.pointerWidth / 2));
