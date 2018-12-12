@@ -1,18 +1,40 @@
 'use strict';
+var posUtils = require('./../utils/PositionTransformation.utils');
 
 function Ghost(settings) {
     var isVisble = false;
     var parentElement = settings.parentElement;
     var ghostBody = settings.body;
     var leftEye = settings.leftEye;
+    var leftEyeBall = settings.leftEyeBall;
     var rightEye = settings.rightEye;
+    var rightEyeBall = settings.rightEyeBall;
     var messageToShow = settings.messageToShow;
+    var eyesSettings = settings.eyesSettings;
+    var screenSettings;
 
     function handleMousePositionChanges(value) {
         if (isVisble) {
-            var x = value.x;
-            console.log(x);
+            var leftEyePosition = calculatePosition(value.x, value.y,
+                screenSettings.leftEye, eyesSettings.leftEye);
+            var rightEyePosition = calculatePosition(value.x, value.y,
+                screenSettings.rightEye, eyesSettings.rightEye);
+            leftEye.setAttribute('x', leftEyePosition.x);
+            leftEye.setAttribute('y', leftEyePosition.y);
+            rightEye.setAttribute('x', rightEyePosition.x);
+            rightEye.setAttribute('y', rightEyePosition.y);
         }
+    }
+
+    function calculatePosition(x, y, screen, eye) {
+        var xValid = posUtils.returnValue(x, screen.maxX, screen.minX);
+        var yValid = posUtils.returnValue(y, screen.maxY, screen.minY);
+        var eyeX = posUtils.transform(xValid, screen.minX, screen.maxX, eye.minX, eye.maxX);
+        var eyeY = posUtils.transform(yValid, screen.minY, screen.maxY, eye.minY, eye.maxY);
+        return {
+            x: eyeX,
+            y: eyeY
+        };
     }
 
     function handleUIMessages(value) {
@@ -44,19 +66,34 @@ function Ghost(settings) {
 
     function init() {
         hide();
-        getElementRect();
+        console.log(rightEye);
+        console.log(leftEye);
+        screenSettings = getScreenSettings();
         window.addEventListener('resize', function () {
-            getElementRect();
+            //getElementRect();
         });
     }
 
-    function getElementRect() {
+    function getScreenSettings() {
         var rect = parentElement.getBoundingClientRect();
-        console.log('left:' + rect.left);
-        console.log('width:' + rect.width);
-        console.log('height:' + rect.height);
-        console.log(rect.bottom);
-        console.log(rect.right);
+        var xCenter = Math.round(rect.width / 2);
+        var leftEyeScreenSettings = {
+            minY: 0,
+            maxY: rect.height,
+            minX: rect.left,
+            maxX: xCenter
+        };
+        var rightEyeScreenSettings = {
+            minY: 0,
+            maxY: rect.height,
+            minX: xCenter,
+            maxX: rect.width
+        };
+
+        return {
+            leftEye: leftEyeScreenSettings,
+            rightEye: rightEyeScreenSettings
+        };
     }
 
     return {

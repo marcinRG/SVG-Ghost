@@ -1,6 +1,7 @@
 https://www.smashingmagazine.com/2015/05/why-the-svg-filter-is-awesome/
 https://www.w3.org/TR/SVG/filters.html#Introduction
 
+Eyes:
 
 8bit
 x	minX	maxX
@@ -16,3 +17,20 @@ x	minX	maxX
 	0	80
 y	minY	maxY
 	40	80
+
+
+hd
+x	minX	maxX
+left	90	165
+right	275	350
+
+y	minY	maxY
+left	110	190
+right	110	190
+
+
+eyeball
+x	minX	maxX
+	35	75
+y	minY	maxY
+	45	125
