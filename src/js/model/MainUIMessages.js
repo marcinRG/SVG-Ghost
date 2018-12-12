@@ -1,5 +1,6 @@
 'use strict';
 var utils = require('./../utils/Observable.utils');
+var miscUtils = require('./../utils/Misc.utils');
 
 function MainUIMessages() {
     var message = '';
@@ -15,6 +16,13 @@ function ObservableMainUIMessages(settings) {
     var goBackButton = settings.goBackButton;
     var messages = settings.messages;
 
+    function update(value) {
+        if (miscUtils.isUIMessage(value)) {
+            console.log('mainUI');
+            console.log(value);
+        }
+    }
+
     function init() {
         addBtnHandler(lowRezButton, ui, messages[0]);
         addBtnHandler(highRezButton, ui, messages[1]);
@@ -23,6 +31,7 @@ function ObservableMainUIMessages(settings) {
 
     return {
         run: init,
+        update: update,
         addObserver: function (observer) {
             ui.addObserver(ui.observers, observer);
         }

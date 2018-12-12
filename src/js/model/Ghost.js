@@ -1,5 +1,6 @@
 'use strict';
 var posUtils = require('./../utils/PositionTransformation.utils');
+var miscUtils = require('./../utils/Misc.utils');
 
 function Ghost(settings) {
     var isVisble = false;
@@ -12,28 +13,36 @@ function Ghost(settings) {
     var messageToShow = settings.messageToShow;
     var eyesSettings = settings.eyesSettings;
     var screenSettings;
+    var fullScreenMove = settings.fullScreenMove;
+    var margin = 35;
 
     function handleMousePositionChanges(value) {
         if (isVisble) {
-            var leftEyePosition = calculatePosition(value.x, value.y,
-                screenSettings.leftEye, eyesSettings.leftEye);
-            var rightEyePosition = calculatePosition(value.x, value.y,
-                screenSettings.rightEye, eyesSettings.rightEye);
-            leftEye.setAttribute('x', leftEyePosition.x);
-            leftEye.setAttribute('y', leftEyePosition.y);
-            rightEye.setAttribute('x', rightEyePosition.x);
-            rightEye.setAttribute('y', rightEyePosition.y);
+            move(value.x, value.y, leftEye, eyesSettings.leftEye, screenSettings.leftEye);
+            move(value.x, value.y, leftEyeBall, eyesSettings.leftEyeball,
+                screenSettings.leftEye);
+            move(value.x, value.y, rightEye, eyesSettings.rightEye,
+                screenSettings.rightEye);
+            move(value.x, value.y, rightEyeBall, eyesSettings.rightEyeball,
+                screenSettings.rightEye);
         }
+    }
+
+    function move(x, y, eye, eyeSetting, screenSetting) {
+        var newEyePosition = calculatePosition(x, y,
+            screenSetting, eyeSetting);
+        eye.setAttribute('x', newEyePosition.x);
+        eye.setAttribute('y', newEyePosition.y);
     }
 
     function calculatePosition(x, y, screen, eye) {
         var xValid = posUtils.returnValue(x, screen.maxX, screen.minX);
         var yValid = posUtils.returnValue(y, screen.maxY, screen.minY);
-        var eyeX = posUtils.transform(xValid, screen.minX, screen.maxX, eye.minX, eye.maxX);
-        var eyeY = posUtils.transform(yValid, screen.minY, screen.maxY, eye.minY, eye.maxY);
+        var newX = posUtils.transform(xValid, screen.minX, screen.maxX, eye.minX, eye.maxX);
+        var newY = posUtils.transform(yValid, screen.minY, screen.maxY, eye.minY, eye.maxY);
         return {
-            x: eyeX,
-            y: eyeY
+            x: newX,
+            y: newY
         };
     }
 
@@ -56,38 +65,54 @@ function Ghost(settings) {
     }
 
     function update(value) {
-        if (isUIMessage(value)) {
+        if (miscUtils.isUIMessage(value)) {
             handleUIMessages(value);
         }
-        if (isMousePositionChange(value)) {
+        if (miscUtils.isMousePositionChange(value)) {
             handleMousePositionChanges(value);
         }
     }
 
     function init() {
         hide();
-        console.log(rightEye);
-        console.log(leftEye);
         screenSettings = getScreenSettings();
         window.addEventListener('resize', function () {
-            //getElementRect();
+            screenSettings = getScreenSettings();
+            handleMousePositionChanges({x: 0, y: 0});
         });
+    }
+
+    function getRightMinXLeftMaxX(rect, fullScreenMove) {
+        var leftMaxX;
+        var rightMinX;
+        var xCenter = Math.round(rect.width / 2);
+        if (fullScreenMove) {
+            leftMaxX = rect.width - margin;
+            rightMinX = margin;
+        } else {
+            leftMaxX = xCenter;
+            rightMinX = xCenter;
+        }
+        return {
+            leftMax: leftMaxX,
+            rightMin: rightMinX
+        };
     }
 
     function getScreenSettings() {
         var rect = parentElement.getBoundingClientRect();
-        var xCenter = Math.round(rect.width / 2);
+        var minMax = getRightMinXLeftMaxX(rect, fullScreenMove);
         var leftEyeScreenSettings = {
-            minY: 0,
-            maxY: rect.height,
-            minX: rect.left,
-            maxX: xCenter
+            minY: margin,
+            maxY: rect.height - margin,
+            minX: margin,
+            maxX: minMax.leftMax
         };
         var rightEyeScreenSettings = {
-            minY: 0,
-            maxY: rect.height,
-            minX: xCenter,
-            maxX: rect.width
+            minY: margin,
+            maxY: rect.height - margin,
+            minX: minMax.rightMin,
+            maxX: rect.width - margin
         };
 
         return {
@@ -102,16 +127,4 @@ function Ghost(settings) {
     };
 }
 
-function isUIMessage(value) {
-    return (value && value.message);
-}
-
-function isMousePositionChange(value) {
-    return (value && value.x && value.y);
-}
-
 module.exports = Ghost;
-
-// const rect = this.htmlFieldElement.getBoundingClientRect();
-// this.minWidth = Math.floor(rect.left + (this.pointerWidth / 2));
-// this.maxWidth = Math.ceil(rect.left + rect.width - (this.pointerWidth / 2));

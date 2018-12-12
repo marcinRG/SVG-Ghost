@@ -24,7 +24,9 @@
         <g id="ghost-eye-8b">
             <polygon class="ghost-eye-8b"
                      points="40,0 120,0 120,40 160,40 160,160 120,160 120,200 40,200 40,160 0,160 0,40 40,40"></polygon>
-            <rect class="ghost-eyeball-8b" x="40" y="60" width="80" height="80"></rect>
+        </g>
+        <g id="ghost-eyeball-8b">
+            <rect class="ghost-eyeball-8b" width="80" height="80"></rect>
         </g>
         <!--hd-shapes-->
         <g id="ghost-eyelash-hd" height="110" width="35">
@@ -42,7 +44,6 @@
             <use class="eyelash-3" xlink:href="#ghost-eyelash-hd"></use>
             <ellipse fill="black" rx="50" ry="100" cy="122" cx="73"></ellipse>
             <ellipse fill="white" rx="50" ry="100" cy="125" cx="75"></ellipse>
-            <use xlink:href="#ghost-eyeball-hd" y="125" x="35"></use>
         </g>
         <g id="ghost-shape-hd" height="700" width="590">
             <path class="ghost-shape-hd" d="M 95,700 q-50,-125 0,-350 c20,-65 25,-100 0,-150 c-110,-250 510,-250 400 0 c-25,50 -20,85 0,150 q50,225 0,350
@@ -52,69 +53,74 @@
     </defs>
 </svg>
 <main>
-        <section class="title-section">
-            <svg class="title" height="120" width="670">
-                <defs>
-                    <filter id="shadow">
-                        <feMorphology operator="dilate" radius="5" in="SourceAlpha" result="stroke"/>
-                        <feFlood flood-color="red" result="color-red"/>
-                        <feComposite in="color-red" in2="stroke" operator="in" result="red-stroke"/>
-                        <feMerge result="result">
-                            <feMergeNode in="red-stroke"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
+    <section class="title-section">
+        <svg class="title" viewBox="0 0 670 120" preserveAspectRatio="xMinYMin">
+            <defs>
+                <filter id="shadow">
+                    <feMorphology operator="dilate" radius="5" in="SourceAlpha" result="stroke"/>
+                    <feFlood flood-color="red" result="color-red"/>
+                    <feComposite in="color-red" in2="stroke" operator="in" result="red-stroke"/>
+                    <feMerge result="result">
+                        <feMergeNode in="red-stroke"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
 
-                    <filter id="txt-shadow">
-                        <feFlood flood-color="white" result="color-white"/>
-                        <feFlood flood-color="blueviolet" result="color-violet"/>
-                        <feMorphology operator="erode" radius="2" in="SourceAlpha" result="text-smaller"/>
-                        <feComposite in="color-white" in2="text-smaller" operator="in" result="text-white"/>
-                        <feComposite in="color-violet" in2="text-smaller" operator="in" result="text-violet"/>
-                        <feBlend in="text-white" in2="SourceAlpha" result="text-white-stroke"/>
-                        <feBlend in="text-violet" in2="SourceAlpha" result="text-violet-stroke"/>
+                <filter id="txt-shadow">
+                    <feFlood flood-color="white" result="color-white"/>
+                    <feFlood flood-color="blueviolet" result="color-violet"/>
+                    <feMorphology operator="erode" radius="2" in="SourceAlpha" result="text-smaller"/>
+                    <feComposite in="color-white" in2="text-smaller" operator="in" result="text-white"/>
+                    <feComposite in="color-violet" in2="text-smaller" operator="in" result="text-violet"/>
+                    <feBlend in="text-white" in2="SourceAlpha" result="text-white-stroke"/>
+                    <feBlend in="text-violet" in2="SourceAlpha" result="text-violet-stroke"/>
 
-                        <feOffset dx="-4" dy="-4" in="text-white-stroke" result="text-white-stroke-offset"/>
-                        <feOffset dx="4" dy="4" in="text-violet-stroke" result="text-violet-stroke-offset"/>
+                    <feOffset dx="-4" dy="-4" in="text-white-stroke" result="text-white-stroke-offset"/>
+                    <feOffset dx="4" dy="4" in="text-violet-stroke" result="text-violet-stroke-offset"/>
 
-                        <feMerge result="picture">
-                            <feMergeNode in="text-white-stroke-offset"/>
-                            <feMergeNode in="text-violet-stroke-offset"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
+                    <feMerge result="picture">
+                        <feMergeNode in="text-white-stroke-offset"/>
+                        <feMergeNode in="text-violet-stroke-offset"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
 
-                </defs>
-                <rect class="title-background" width="630" height="80" x="20" y="20" rx="5" ry="5"
-                      filter="url(#shadow)"></rect>
-                <text class="title-text" dx="0 5 5 0 5 5 5 5 5 0 5 5 5 5" x="43" y="77" filter="url(#txt-shadow)">SVG Ghost
-                    demo
-                </text>
+            </defs>
+            <rect class="title-background" width="630" height="80" x="20" y="20" rx="5" ry="5"
+                  filter="url(#shadow)"></rect>
+            <text class="title-text" dx="0 5 5 0 5 5 5 5 5 0 5 5 5 5" x="43" y="77" filter="url(#txt-shadow)">SVG Ghost
+                demo
+            </text>
+        </svg>
+        <p class="res-title">Choose resolution:</p>
+        <ul class="selections">
+            <li class="selection low-rez-btn">8-bit</li>
+            <li class="selection high-rez-btn">high definition</li>
+        </ul>
+    </section>
+
+    <section class="ghost-section">
+        <div class="ghost-field">
+            <svg class="ghost-8bit" height="490" width="413" viewBox="0 0 590 700" preserveAspectRatio="xMinYMin">
+                            <use xlink:href="#ghost-shape-8b" x="0" y="0"></use>
+                            <use class="left-eye" xlink:href="#ghost-eye-8b" x="100" y="270"></use>
+                            <use class="left-eyeball" xlink:href="#ghost-eyeball-8b" x="140" y="330"></use>
+                            <use class="right-eye" xlink:href="#ghost-eye-8b" x="340" y="270"></use>
+                            <use class="right-eyeball" xlink:href="#ghost-eyeball-8b" x="380" y="330"></use>
+             </svg>
+            <svg class="ghost-hd" height="490" width="413" viewBox="0 0 590 700" preserveAspectRatio="xMinYMin">
+                <use xlink:href="#ghost-shape-hd" x="0" y="0"></use>
+                <use class="left-eye" xlink:href="#ghost-eye-hd" x="125" y="150"></use>
+                <use class="right-eye" xlink:href="#ghost-eye-hd" x="325" y="150"></use>
+
+                <use class="left-eyeball" xlink:href="#ghost-eyeball-hd" x="180" y="230"></use>
+                <use class="right-eyeball" xlink:href="#ghost-eyeball-hd" x="380" y="230"></use>
             </svg>
-            <p class="res-title">Choose resolution:</p>
-            <ul class="selections">
-                <li class="selection low-rez-btn">8-bit</li>
-                <li class="selection high-rez-btn">high definition</li>
-            </ul>
-        </section>
-
-        <section class="ghost-section">
-          <div class="ghost-field">
-              <svg class="ghost-8bit" height="490" width="413" viewBox="0 0 590 700" preserveAspectRatio="xMinYMin">
-                  <use xlink:href="#ghost-shape-8b" x="0" y="0"></use>
-                  <use class="left-eye" xlink:href="#ghost-eye-8b" x="90" y="270"></use>
-                  <use class="right-eye" xlink:href="#ghost-eye-8b" x="340" y="270"></use>
-              </svg>
-                <svg class="ghost-hd" height="490" width="413" viewBox="0 0 590 700" preserveAspectRatio="xMinYMin">
-                    <use xlink:href="#ghost-shape-hd" x="0" y="0"></use>
-                    <use xlink:href="#ghost-eye-hd" x="130" y="150"></use>
-                    <use xlink:href="#ghost-eye-hd" x="310" y="150"></use>
-                </svg>
-            </div>
-            <div class="button-field">
-                <button class="back-btn">back to menu</button>
-            </div>
-        </section>
+        </div>
+        <div class="button-field">
+            <button class="back-btn">back to menu</button>
+        </div>
+    </section>
 </main>
 <footer class="footer">
     <span></span>

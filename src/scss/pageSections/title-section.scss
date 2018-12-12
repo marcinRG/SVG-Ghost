@@ -13,6 +13,8 @@
   .res-title {
     @include txt;
     margin: 3em 0 2em;
+    width: 90%;
+    height: auto;
   }
 
   .selections {
