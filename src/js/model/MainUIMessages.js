@@ -15,11 +15,18 @@ function ObservableMainUIMessages(settings) {
     var highRezButton = settings.highRezButton;
     var goBackButton = settings.goBackButton;
     var messages = settings.messages;
+    var menuPanel = settings.menuPanel;
+    var ghostsPanel = settings.ghostsPanel;
 
     function update(value) {
         if (miscUtils.isUIMessage(value)) {
-            console.log('mainUI');
-            console.log(value);
+            if (value.message === messages[2]) {
+                changeVisibility(ghostsPanel, false);
+                changeVisibility(menuPanel, true);
+            } else {
+                changeVisibility(ghostsPanel, true);
+                changeVisibility(menuPanel, false);
+            }
         }
     }
 
@@ -27,6 +34,8 @@ function ObservableMainUIMessages(settings) {
         addBtnHandler(lowRezButton, ui, messages[0]);
         addBtnHandler(highRezButton, ui, messages[1]);
         addBtnHandler(goBackButton, ui, messages[2]);
+        changeVisibility(menuPanel, true);
+        changeVisibility(ghostsPanel, false);
     }
 
     return {
@@ -36,6 +45,15 @@ function ObservableMainUIMessages(settings) {
             ui.addObserver(ui.observers, observer);
         }
     };
+}
+
+function changeVisibility(element, visible) {
+    if (visible) {
+        element.style.visibility = 'visible';
+    }
+    else {
+        element.style.visibility = 'hidden';
+    }
 }
 
 function addBtnHandler(btn, messagesObj, msgTxt) {

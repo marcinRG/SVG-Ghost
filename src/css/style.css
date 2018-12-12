@@ -19,6 +19,11 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh; }
+
 @font-face {
   font-family: "8BitWonder";
   src: url("../fonts/8bitwonder/8-bit_wonder.eot");
@@ -39,6 +44,11 @@ body {
 .section {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh; }
 
 .defs {
   border: 0;
@@ -95,7 +105,17 @@ body {
   fill: black; }
 
 .title {
-  background-color: transparent; }
+  background-color: transparent;
+  width: 100%;
+  height: auto; }
+
+@media screen and (min-width: 768px) {
+  .title {
+    width: 65%; } }
+
+@media screen and (min-width: 992px) {
+  .title {
+    width: 720px; } }
 
 .title-text {
   font-family: '8BitWonder', monospace;
@@ -131,40 +151,75 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh; }
+
 .title-section {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   text-align: center;
   background-color: #00410e;
-  padding: 4em; }
+  padding: 3em .2em; }
+
+@media screen and (min-width: 768px) {
+  .title-section {
+    padding: 2em; } }
   .title-section .res-title {
     font-family: 'PressStart', monospace;
     color: yellow;
-    font-size: 25px;
-    letter-spacing: 3px;
-    margin: 3em 0 2em;
-    width: 90%;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 3em 0 2.5em;
+    width: 95%;
     height: auto; }
+
+@media screen and (min-width: 768px) {
+  .title-section .res-title {
+    font-size: 18px;
+    letter-spacing: 3px; } }
+
+@media screen and (min-width: 768px) {
+  .title-section .res-title {
+    margin: 3em 0 2em; } }
   .title-section .selections {
     display: block;
     margin: 0 auto;
-    width: 30%;
+    width: 90%;
     list-style-type: none; }
+
+@media screen and (min-width: 768px) {
+  .title-section .selections {
+    width: 55%; } }
+
+@media screen and (min-width: 1200px) {
+  .title-section .selections {
+    width: 25em; } }
   .title-section .selection {
     font-family: 'PressStart', monospace;
     color: yellow;
-    font-size: 25px;
-    letter-spacing: 3px;
-    padding: .7em .5em;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 1.2em .5em;
     margin: 1em 0;
     display: block;
     text-align: left;
     cursor: pointer;
     border: 5px transparent solid;
     border-radius: 10px; }
+
+@media screen and (min-width: 768px) {
+  .title-section .selection {
+    font-size: 18px;
+    letter-spacing: 3px; } }
     .title-section .selection::before {
       display: inline-block;
       padding: 0 .4em 0 .2em;
@@ -195,7 +250,16 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh; }
+
 .ghost-section {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   background-color: black;
@@ -224,15 +288,33 @@ body {
           transform: translate(-50%, -50%);
   font-family: 'PressStart', monospace;
   color: yellow;
-  font-size: 25px;
-  letter-spacing: 3px;
+  font-size: 12px;
+  letter-spacing: 2px;
   outline: 0;
   background-color: transparent;
   cursor: pointer;
+  width: 85%;
   border: 5px transparent solid;
   border-radius: 10px;
   padding: .7em .5em;
   margin: 0; }
+
+@media screen and (min-width: 768px) {
+  .back-btn {
+    font-size: 18px;
+    letter-spacing: 3px; } }
+
+@media screen and (min-width: 768px) {
+  .back-btn {
+    width: 50%; } }
+
+@media screen and (min-width: 992px) {
+  .back-btn {
+    width: 30%; } }
+
+@media screen and (min-width: 1200px) {
+  .back-btn {
+    width: 25em; } }
   .back-btn::before {
     padding: 0 .5em;
     display: inline-block;
@@ -254,7 +336,17 @@ body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: transparent; }
+  background-color: transparent;
+  width: 45%;
+  height: auto; }
+
+@media screen and (min-width: 768px) {
+  .ghost-8bit {
+    width: 30%; } }
+
+@media screen and (min-width: 992px) {
+  .ghost-8bit {
+    width: 300px; } }
 
 .ghost-hd {
   border: 0;
@@ -267,4 +359,14 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+          transform: translate(-50%, -50%);
+  width: 45%;
+  height: auto; }
+
+@media screen and (min-width: 768px) {
+  .ghost-hd {
+    width: 30%; } }
+
+@media screen and (min-width: 992px) {
+  .ghost-hd {
+    width: 300px; } }

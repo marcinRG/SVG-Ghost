@@ -17,5 +17,7 @@ ghostHD.run();
 
 mainUI.addObserver(ghost8bit);
 mainUI.addObserver(ghostHD);
+mainUI.addObserver(mainUI);
+
 mousePosition.addObserver(ghost8bit);
 mousePosition.addObserver(ghostHD);

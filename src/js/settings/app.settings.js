@@ -14,6 +14,8 @@ var mainUISettings = {
     lowRezButton: document.querySelector('.low-rez-btn'),
     highRezButton: document.querySelector('.high-rez-btn'),
     goBackButton: document.querySelector('.back-btn'),
+    menuPanel: document.querySelector('.title-section'),
+    ghostsPanel: document.querySelector('.ghost-section'),
     messages: messages
 };
 

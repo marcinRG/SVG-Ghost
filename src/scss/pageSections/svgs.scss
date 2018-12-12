@@ -61,6 +61,20 @@
 
 .title {
   background-color: transparent;
+  width: 100%;
+  height: auto;
+
+  @media screen {
+
+    @media (min-width: $media-br-1) {
+      width: 65%;
+    }
+
+    @media (min-width: $media-br-2) {
+      width: 720px;
+    }
+
+  }
 }
 
 .title-text {
